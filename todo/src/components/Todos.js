@@ -17,7 +17,7 @@ class Todos extends Component {
 
   render() {
     const todoItems = this.props.todos.map(todo => (
-      <div key={todo.id}>
+      <div key={todo.key}>
         <h3>{todo.title}</h3>
         <p>{JSON.stringify(todo.completed)}</p>
       </div>

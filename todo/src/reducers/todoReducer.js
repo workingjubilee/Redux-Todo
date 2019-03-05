@@ -7,10 +7,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case FETCH_TODOS: return {
-      ...state,
-      items: action.payload
-    };
+    case FETCH_TODOS: return state;
     case NEW_TODO: return {
       ...state,
       item: action.payload

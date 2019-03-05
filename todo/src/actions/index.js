@@ -1,16 +1,16 @@
 export const FETCH_TODOS = 'FETCH_TODOS';
 export const NEW_TODO = 'NEW_TODO';
 
-export const fetchTodos = (value, dispatch) => {
+export const fetchTodos = (dispatch) => {
   return dispatch = {
-    type: FETCH_TODOS,
-    payload: value
+    type: FETCH_TODOS
   };
 };
 
-export const newTodo = (value, dispatch) => {
-  return dispatch = {
+export const newTodo = (value) => {
+  let dispatch = {
     type: NEW_TODO,
     payload: value
   };
+  return dispatch
 };
