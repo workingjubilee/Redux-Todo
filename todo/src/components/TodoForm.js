@@ -24,7 +24,7 @@ class TodoForm extends Component {
       completed: false,
       key: timestamp
     };
-    console.log(thisTodo);
+
 
     this.props.newTodo(thisTodo);
   };

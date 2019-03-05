@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTodos } from '../actions';
+import { fetchTodos, deleteTodo } from '../actions';
 
 
 class Todos extends Component {
@@ -14,12 +14,17 @@ class Todos extends Component {
     }
   }
 
+  deleteTodo = (deleteKey, event) => {
+    this.props.deleteTodo(deleteKey);
+  };
+
 
   render() {
     const todoItems = this.props.todos.map(todo => (
       <div key={todo.key}>
         <h3>{todo.title}</h3>
         <p>{JSON.stringify(todo.completed)}</p>
+        <button onClick={(deleteKey,event) => this.deleteTodo(todo.key)}> Complete Todo</button>
       </div>
     ));
     return (
@@ -37,4 +42,4 @@ const mapStateToProps = state => ({
   newTodo: state.todos.item
 });
 
-export default connect(mapStateToProps, { fetchTodos })(Todos);
+export default connect(mapStateToProps, { fetchTodos, deleteTodo })(Todos);
